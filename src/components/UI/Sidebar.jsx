@@ -64,7 +64,7 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle }) => {
         onClick={onToggle}
         aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
       >
-        {isOpen ? '❮' : '❯'}
+        {isOpen ? '✕' : '☰'}
       </button>
 
       <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
@@ -124,7 +124,10 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle }) => {
               <div
                 key={`${local.id}-${index}`}
                 className="list-item"
-                onClick={() => onSelectLocation(local)}
+                onClick={() => {
+                  onSelectLocation(local);
+                  if (window.innerWidth <= 768) onToggle();
+                }}
               >
                 <div className="item-header">
                   <strong>{local.nome}</strong>
