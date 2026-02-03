@@ -1,0 +1,642 @@
+[
+    {
+        "nome":"Vermelhinho",
+        "id":20701,
+        "centro":"CCMN",
+        "latitude":-22.85864,
+        "longitude":-43.23251,
+        "tipo":"Restaurante a quilo",
+        "classificacao":1,
+        "indiceSaudabilidade":39
+    },
+    {
+        "nome":"Hora do lanche",
+        "id":20704,
+        "centro":"CCMN",
+        "latitude":-22.85848,
+        "longitude":-43.23156,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":33
+    },
+    {
+        "nome":"Hora do lanche",
+        "id":20704,
+        "centro":"CCMN",
+        "latitude":-22.85848,
+        "longitude":-43.23156,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":33
+    },
+    {
+        "nome":"Amarelinho",
+        "id":20705,
+        "centro":"CCMN",
+        "latitude":-22.8585,
+        "longitude":-43.23198,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":22
+    },
+    {
+        "nome":"Amarelinho",
+        "id":20705,
+        "centro":"CCMN",
+        "latitude":-22.8585,
+        "longitude":-43.23198,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":22
+    },
+    {
+        "nome":"Cantina da Ines",
+        "id":20710,
+        "centro":"CCMN",
+        "latitude":-22.85754,
+        "longitude":-43.23356,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":28
+    },
+    {
+        "nome":"Konis CCMN",
+        "id":20711,
+        "centro":"CCMN",
+        "latitude":-22.85863,
+        "longitude":-43.23246,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":44
+    },
+    {
+        "nome":"Nova Verona Mix",
+        "id":20302,
+        "centro":"CCS",
+        "latitude":-22.84243,
+        "longitude":-43.23495,
+        "tipo":"Restaurante a quilo",
+        "classificacao":1,
+        "indiceSaudabilidade":61
+    },
+    {
+        "nome":"Nova Verona Mix",
+        "id":20302,
+        "centro":"CCS",
+        "latitude":-22.84243,
+        "longitude":-43.23495,
+        "tipo":"Restaurante a quilo",
+        "classificacao":1,
+        "indiceSaudabilidade":56
+    },
+    {
+        "nome":"Churrascaria Fundão grill",
+        "id":20320,
+        "centro":"CCS",
+        "latitude":-22.842585,
+        "longitude":-43.23464,
+        "tipo":"Restaurante a quilo",
+        "classificacao":1,
+        "indiceSaudabilidade":61
+    },
+    {
+        "nome":"Quiosque Dois Irmãos",
+        "id":20331,
+        "centro":"CCS",
+        "latitude":-22.84207,
+        "longitude":-43.23625,
+        "tipo":"Restaurante a quilo",
+        "classificacao":1,
+        "indiceSaudabilidade":50
+    },
+    {
+        "nome":"Melzinho",
+        "id":20342,
+        "centro":"CCS",
+        "latitude":-22.84133,
+        "longitude":-43.237839,
+        "tipo":"Restaurante a quilo",
+        "classificacao":1,
+        "indiceSaudabilidade":44
+    },
+    {
+        "nome":"Cordeiro grill",
+        "id":20345,
+        "centro":"CCS",
+        "latitude":-22.84154,
+        "longitude":-43.23846,
+        "tipo":"Restaurante a quilo",
+        "classificacao":1,
+        "indiceSaudabilidade":44
+    },
+    {
+        "nome":"Flor da Amizade BioRio",
+        "id":20357,
+        "centro":"CCS",
+        "latitude":-22.84047,
+        "longitude":-43.23088,
+        "tipo":"Restaurante a quilo",
+        "classificacao":1,
+        "indiceSaudabilidade":67
+    },
+    {
+        "nome":"Laranjão",
+        "id":20327,
+        "centro":"CCS",
+        "latitude":-22.84208,
+        "longitude":-43.23598,
+        "tipo":"Restaurante à la carte\/prato feito",
+        "classificacao":1,
+        "indiceSaudabilidade":67
+    },
+    {
+        "nome":"Trailer do Zito",
+        "id":20354,
+        "centro":"CCS",
+        "latitude":-22.84096,
+        "longitude":-43.23757,
+        "tipo":"'Restaurante buffet livre\/rodízio",
+        "classificacao":1,
+        "indiceSaudabilidade":44
+    },
+    {
+        "nome":"Matte mania HU",
+        "id":20316,
+        "centro":"CCS",
+        "latitude":-22.84214,
+        "longitude":-43.23464,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":44
+    },
+    {
+        "nome":"Matte mania EF",
+        "id":20317,
+        "centro":"CCS",
+        "latitude":-22.84275,
+        "longitude":-43.23409,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":33
+    },
+    {
+        "nome":"Ponto Redondo",
+        "id":20318,
+        "centro":"CCS",
+        "latitude":-22.8421049,
+        "longitude":-43.2360441,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":11
+    },
+    {
+        "nome":"kiosque mania",
+        "id":20336,
+        "centro":"CCS",
+        "latitude":-22.84138,
+        "longitude":-43.237689,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":33
+    },
+    {
+        "nome":"Jovem Lanches",
+        "id":20336,
+        "centro":"CCS",
+        "latitude":-22.84133,
+        "longitude":-43.237839,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":28
+    },
+    {
+        "nome":"Rio's Lanches",
+        "id":20338,
+        "centro":"CCS",
+        "latitude":-22.841452,
+        "longitude":-43.237755,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":22
+    },
+    {
+        "nome":"Francisco Ribeiro",
+        "id":20340,
+        "centro":"CCS",
+        "latitude":-22.841526,
+        "longitude":-43.238191,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":33
+    },
+    {
+        "nome":"Dona Glória",
+        "id":20343,
+        "centro":"CCS",
+        "latitude":-22.841526,
+        "longitude":-43.238191,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":33
+    },
+    {
+        "nome":"Super Lula",
+        "id":20344,
+        "centro":"CCS",
+        "latitude":-22.84133,
+        "longitude":-43.237839,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":39
+    },
+    {
+        "nome":"Nova Lanchonete",
+        "id":20356,
+        "centro":"CCS",
+        "latitude":-22.8421,
+        "longitude":-43.23631,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":28
+    },
+    {
+        "nome":"Shopping dos Doces",
+        "id":20324,
+        "centro":"CCS",
+        "latitude":-22.84241,
+        "longitude":-43.23462,
+        "tipo":"Bombonièrie (guloseimas, doces e bebidas açucaradas)",
+        "classificacao":3,
+        "indiceSaudabilidade":22
+    },
+    {
+        "nome":"Delicias do CCS",
+        "id":20325,
+        "centro":"CCS",
+        "latitude":-22.84238,
+        "longitude":-43.23486,
+        "tipo":"Bombonièrie (guloseimas, doces e bebidas açucaradas)",
+        "classificacao":3,
+        "indiceSaudabilidade":33
+    },
+    {
+        "nome":"Banca do CCS",
+        "id":20350,
+        "centro":"CCS",
+        "latitude":-22.842115,
+        "longitude":-43.233139,
+        "tipo":"Bombonièrie (guloseimas, doces e bebidas açucaradas)",
+        "classificacao":3,
+        "indiceSaudabilidade":22
+    },
+    {
+        "nome":"Cantina da Dona Lena",
+        "id":20308,
+        "centro":"CCS",
+        "latitude":-22.84154,
+        "longitude":-43.23846,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":50
+    },
+    {
+        "nome":"Big Neth",
+        "id":20311,
+        "centro":"CCS",
+        "latitude":-22.84242,
+        "longitude":-43.23489,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":50
+    },
+    {
+        "nome":"Big Neth",
+        "id":20311,
+        "centro":"CCS",
+        "latitude":-22.84242,
+        "longitude":-43.23489,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":50
+    },
+    {
+        "nome":"Yakisoba lanches",
+        "id":20313,
+        "centro":"CCS",
+        "latitude":-22.84264,
+        "longitude":-43.2342,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":44
+    },
+    {
+        "nome":"Lanches e Refeições",
+        "id":20321,
+        "centro":"CCS",
+        "latitude":-22.84283,
+        "longitude":-43.234133,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":50
+    },
+    {
+        "nome":"Italian Tutti",
+        "id":20358,
+        "centro":"CCS",
+        "latitude":-22.84212,
+        "longitude":-43.23635,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":56
+    },
+    {
+        "nome":"Kilowatts",
+        "id":20402,
+        "centro":"CT",
+        "latitude":-22.8622205,
+        "longitude":-43.2296458,
+        "tipo":"Restaurante a quilo",
+        "classificacao":1,
+        "indiceSaudabilidade":67
+    },
+    {
+        "nome":"Projectus Restaurante",
+        "id":20403,
+        "centro":"CT",
+        "latitude":-22.8617078,
+        "longitude":-43.2297954,
+        "tipo":"Restaurante a quilo",
+        "classificacao":1,
+        "indiceSaudabilidade":56
+    },
+    {
+        "nome":"RU CT 2 (antigo Burguesão)",
+        "id":20410,
+        "centro":"CT",
+        "latitude":-22.86127,
+        "longitude":-43.22836,
+        "tipo":"'Restaurante buffet livre\/rodízio",
+        "classificacao":1,
+        "indiceSaudabilidade":89
+    },
+    {
+        "nome":"Kari Graça's Lanches",
+        "id":20404,
+        "centro":"CT",
+        "latitude":-22.86121,
+        "longitude":-43.22871,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":17
+    },
+    {
+        "nome":"Banca do CT",
+        "id":20420,
+        "centro":"CT",
+        "latitude":-22.85865,
+        "longitude":-43.23064,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":17
+    },
+    {
+        "nome":"Cantina do Daeq",
+        "id":20427,
+        "centro":"CT",
+        "latitude":-22.86099,
+        "longitude":-43.23041,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":17
+    },
+    {
+        "nome":"Paulinho dos Doces",
+        "id":20413,
+        "centro":"CT",
+        "latitude":-22.85994,
+        "longitude":-43.22956,
+        "tipo":"Bombonièrie (guloseimas, doces e bebidas açucaradas)",
+        "classificacao":3,
+        "indiceSaudabilidade":22
+    },
+    {
+        "nome":"Italian Tutti",
+        "id":20401,
+        "centro":"CT",
+        "latitude":-22.85905,
+        "longitude":-43.23049,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":67
+    },
+    {
+        "nome":"Universidade Lanches",
+        "id":20405,
+        "centro":"CT",
+        "latitude":-22.86035,
+        "longitude":-43.22948,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":56
+    },
+    {
+        "nome":"Batista's Lanches",
+        "id":20407,
+        "centro":"CT",
+        "latitude":-22.85918,
+        "longitude":-43.23015,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":50
+    },
+    {
+        "nome":"Rodrigues Lanches",
+        "id":20408,
+        "centro":"CT",
+        "latitude":-22.86006,
+        "longitude":-43.22892,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":50
+    },
+    {
+        "nome":"Dilicinha Lanches",
+        "id":20409,
+        "centro":"CT",
+        "latitude":-22.85961,
+        "longitude":-43.22983,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":22
+    },
+    {
+        "nome":"Bar da Física",
+        "id":20421,
+        "centro":"CT",
+        "latitude":-22.85923,
+        "longitude":-43.2313,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":33
+    },
+    {
+        "nome":"Anjinho Lanches",
+        "id":20422,
+        "centro":"CT",
+        "latitude":-22.85952,
+        "longitude":-43.23008,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":50
+    },
+    {
+        "nome":"Bom Gosto Lanches",
+        "id":20424,
+        "centro":"CT",
+        "latitude":-22.86099,
+        "longitude":-43.22875,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":39
+    },
+    {
+        "nome":"Budy Fundão",
+        "id":20425,
+        "centro":"CT",
+        "latitude":-22.86099,
+        "longitude":-43.22875,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":39
+    },
+    {
+        "nome":"Rio books",
+        "id":20603,
+        "centro":"Letras",
+        "latitude":-22.86048,
+        "longitude":-43.22587,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":22
+    },
+    {
+        "nome":"Trailer do Carvalho",
+        "id":20604,
+        "centro":"Letras",
+        "latitude":-22.86041,
+        "longitude":-43.22633,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":28
+    },
+    {
+        "nome":"Konis",
+        "id":20605,
+        "centro":"Letras",
+        "latitude":-22.86044,
+        "longitude":-43.22639,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":33
+    },
+    {
+        "nome":"Flor da Amizade",
+        "id":20801,
+        "centro":"Parque Tecnológico",
+        "latitude":-22.85998,
+        "longitude":-43.21842,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":61
+    },
+    {
+        "nome":"Restaurante Escola",
+        "id":20802,
+        "centro":"Parque Tecnológico",
+        "latitude":-22.86016,
+        "longitude":-43.21857,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":72
+    },
+    {
+        "nome":"Yakisoba reitoria",
+        "id":20515,
+        "centro":"Reitoria",
+        "latitude":-22.8622,
+        "longitude":-43.2236,
+        "tipo":"Restaurante à la carte\/prato feito",
+        "classificacao":1,
+        "indiceSaudabilidade":44
+    },
+    {
+        "nome":"Trailer do Ary",
+        "id":20507,
+        "centro":"Reitoria",
+        "latitude":-22.86291,
+        "longitude":-43.22404,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":28
+    },
+    {
+        "nome":"Th Lanches (antigo seu Zé)",
+        "id":20511,
+        "centro":"Reitoria",
+        "latitude":-22.86274,
+        "longitude":-43.2231,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":28
+    },
+    {
+        "nome":"Arquibar",
+        "id":20516,
+        "centro":"Reitoria",
+        "latitude":-22.86209,
+        "longitude":-43.22326,
+        "tipo":"Lanchonete",
+        "classificacao":3,
+        "indiceSaudabilidade":28
+    },
+    {
+        "nome":"Rio Books Reitoria",
+        "id":20505,
+        "centro":"Reitoria",
+        "latitude":-22.8622,
+        "longitude":-43.2235,
+        "tipo":"Cafeteria",
+        "classificacao":3,
+        "indiceSaudabilidade":39
+    },
+    {
+        "nome":"Banca da reitoria",
+        "id":20510,
+        "centro":"Reitoria",
+        "latitude":-22.86216,
+        "longitude":-43.2235,
+        "tipo":"Bombonièrie (guloseimas, doces e bebidas açucaradas)",
+        "classificacao":3,
+        "indiceSaudabilidade":17
+    },
+    {
+        "nome":"Cantinho da Carol",
+        "id":20503,
+        "centro":"Reitoria",
+        "latitude":-22.86213,
+        "longitude":-43.22348,
+        "tipo":"Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
+        "classificacao":2,
+        "indiceSaudabilidade":28
+    },
+    {
+        "nome":"RU Central",
+        "id":10,
+        "centro":null,
+        "latitude":-22.84439,
+        "longitude":-43.23469,
+        "tipo":"'Restaurante buffet livre\/rodízio",
+        "classificacao":1,
+        "indiceSaudabilidade":89
+    }
+]
