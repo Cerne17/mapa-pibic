@@ -1,34 +1,73 @@
-.legend-container {
+/* Container Wrapper: Posiciona o componente na tela */
+.legend-wrapper {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  /* Acima do mapa */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* Alinha tudo à direita */
+  max-width: 90vw;
+  /* Garante que não extrapole a largura no mobile */
+}
+
+/* Botão de abrir/fechar */
+.legend-toggle-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+  /* Espaço entre botão e caixa */
+  font-weight: bold;
+  color: #555;
+  display: block;
+  /* Sempre visível */
+}
+
+.legend-toggle-btn:hover {
+  background: #f0f0f0;
+}
+
+/* A Caixa Branca da Legenda */
+.legend-content {
   background: white;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   font-family: 'Inter', sans-serif;
-  min-width: 220px;
-  
-  /* Posicionamento Flutuante no Mapa */
-  position: absolute; 
-  bottom: 30px;
-  right: 30px;
-  z-index: 1000; /* Garante que fique acima do mapa */
+  min-width: 200px;
+  animation: fadeIn 0.3s ease;
 }
 
-.legend-container h4 {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.legend-content h4 {
   margin: 0 0 10px 0;
   font-size: 14px;
   color: #333;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-}
-
-.legend-item:last-child {
-  margin-bottom: 0;
 }
 
 .dot {
@@ -53,4 +92,20 @@
   font-size: 10px;
   color: #777;
   line-height: 1.2;
+}
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 768px) {
+  .legend-wrapper {
+    bottom: 80px;
+    /* Acima do botão do drawer */
+    right: 20px;
+    z-index: 1500;
+  }
+
+  .legend-content {
+    width: 200px;
+    /* Tamanho fixo menor no mobile */
+    padding: 10px;
+  }
 }
