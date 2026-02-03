@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import locaisData from '../../data/data.json';
 import './Sidebar.css';
 
-const Sidebar = ({ onSelectLocation, isOpen, onToggle }) => {
+const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
   const [busca, setBusca] = useState('');
   const [ordenacao, setOrdenacao] = useState('padrao');
   const [filtroCentro, setFiltroCentro] = useState('todos');
@@ -82,7 +82,7 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle }) => {
 
       <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
-          <h2>Locais UFRJ</h2>
+          <h2>Conhecendo o Ambiente Alimentar da UFRJ</h2>
 
           <input
             type="text"
@@ -165,8 +165,15 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle }) => {
           )}
         </div>
 
-        <div className="sidebar-footer">
-          <p>Projeto Gastronomia UFRJ</p>
+        <div className="sidebar-footer compact">
+          <button className="btn-about" onClick={onOpenAbout}>
+            Sobre o Projeto
+          </button>
+          <div className="compact-logos">
+            <img src="https://ufrj.br/wp-content/uploads/2024/01/ufrj-horizontal-cor-rgb-telas.png" alt="UFRJ" />
+            <img src="https://injc.ufrj.br/wp-content/uploads/2014/10/INJC-2.jpg" alt="INJC" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRufVAnLgXIjj-mdnic_2tPbtXdjiyhRS8x7A&s" alt="Gastronomia" />
+          </div>
         </div>
       </div>
     </>

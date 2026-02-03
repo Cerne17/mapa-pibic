@@ -1,5 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Quicksand:wght@400;500;700&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', system-ui, sans-serif;
+  --sidebar-radius: 32px;
+  --card-radius: 24px;
+  --primary-playful: #3b82f6;
+  --secondary-playful: #60a5fa;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Outfit', sans-serif;
 }
 
 body {
@@ -7,7 +20,8 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden; /* Remove barras de rolagem da janela */
+  overflow: hidden;
+  /* Remove barras de rolagem da janela */
 }
 
 /* Estilização dos Marcadores (Pins) */
@@ -15,8 +29,9 @@ body {
   background-color: white;
   border-radius: 50%;
   border: 2px solid white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  display: flex !important; /* Importante para centralizar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex !important;
+  /* Importante para centralizar */
   align-items: center;
   justify-content: center;
 }
@@ -28,21 +43,34 @@ body {
 }
 
 /* Cores baseadas na classificação */
-.bg-green { background-color: #2ecc71; }   /* Classificação 1 */
-.bg-yellow { background-color: #f1c40f; }  /* Classificação 2 */
-.bg-red { background-color: #e74c3c; }     /* Classificação 3 */
+.bg-green {
+  background-color: #2ecc71;
+}
+
+/* Classificação 1 */
+.bg-yellow {
+  background-color: #f1c40f;
+}
+
+/* Classificação 2 */
+.bg-red {
+  background-color: #e74c3c;
+}
+
+/* Classificação 3 */
 
 /* --- Estilos do Popup Personalizado --- */
 .leaflet-popup-content-wrapper {
   border-radius: 8px;
   /* MUDANÇA: De 'hidden' para 'visible' para o tooltip poder "sair" da caixa */
-  overflow: visible; 
+  overflow: visible;
   padding: 0;
 }
 
 .leaflet-popup-content {
   margin: 0;
-  width: 260px !important; /* Força uma largura boa */
+  width: 260px !important;
+  /* Força uma largura boa */
 }
 
 .popup-content {
@@ -88,7 +116,8 @@ body {
 }
 
 .tooltip-container {
-  position: relative; /* Necessário para posicionar o texto flutuante */
+  position: relative;
+  /* Necessário para posicionar o texto flutuante */
   display: inline-block;
   margin-left: 5px;
 }
@@ -119,18 +148,20 @@ body {
   font-size: 11px;
   font-weight: normal;
   line-height: 1.4;
-  
+
   /* Posicionamento: Em cima do ícone */
   position: absolute;
   z-index: 1;
-  bottom: 125%; /* Faz aparecer acima do ? */
+  bottom: 125%;
+  /* Faz aparecer acima do ? */
   left: 50%;
-  margin-left: -90px; /* Centraliza (metade da largura) */
-  
+  margin-left: -90px;
+  /* Centraliza (metade da largura) */
+
   /* Efeitinho de transição */
   opacity: 0;
   transition: opacity 0.3s;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* A setinha preta embaixo do tooltip */
