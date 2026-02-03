@@ -7,13 +7,21 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle }) => {
   const [ordenacao, setOrdenacao] = useState('padrao');
   const [filtroCentro, setFiltroCentro] = useState('todos');
   const [filtroClassificacao, setFiltroClassificacao] = useState('todas');
+  const [filtroTipo, setFiltroTipo] = useState('todos');
 
-  // Extrair centros únicos (Memoizado para performance)
   const centrosUnicos = useMemo(() => {
     const centros = locaisData
       .map(l => l.centro)
-      .filter(c => c && c.trim() !== ''); // Garante que não pega vazios
+      .filter(c => c && c.trim() !== '');
     return [...new Set(centros)].sort();
+  }, []);
+
+  // Extrair tipos únicos
+  const tiposUnicos = useMemo(() => {
+    const tipos = locaisData
+      .map(l => l.tipo)
+      .filter(t => t && t.trim() !== '');
+    return [...new Set(tipos)].sort();
   }, []);
 
   // Lógica de Processamento Unificada
@@ -41,6 +49,11 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle }) => {
         if (local.classificacao !== parseInt(filtroClassificacao)) return false;
       }
 
+      // Filtro de Tipo
+      if (filtroTipo !== 'todos') {
+        if (local.tipo !== filtroTipo) return false;
+      }
+
       return true;
     });
 
@@ -55,7 +68,7 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle }) => {
     });
 
     return ordenados;
-  }, [busca, filtroCentro, filtroClassificacao, ordenacao]);
+  }, [busca, filtroCentro, filtroClassificacao, filtroTipo, ordenacao]);
 
   return (
     <>
@@ -95,9 +108,19 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle }) => {
               <label>Classificação</label>
               <select value={filtroClassificacao} onChange={e => setFiltroClassificacao(e.target.value)}>
                 <option value="todas">Todas</option>
-                <option value="1">🟢 Saudável</option>
-                <option value="2">🟡 Misto</option>
-                <option value="3">🔴 Não Saudável</option>
+                <option value="1">🟢 Tipo 1</option>
+                <option value="2">🟡 Tipo 2</option>
+                <option value="3">🔴 Tipo 3</option>
+              </select>
+            </div>
+
+            <div className="filter-group">
+              <label>Tipo</label>
+              <select value={filtroTipo} onChange={e => setFiltroTipo(e.target.value)}>
+                <option value="todos">Todos</option>
+                {tiposUnicos.map(t => (
+                  <option key={t} value={t}>{t}</option>
+                ))}
               </select>
             </div>
 
