@@ -31,3 +31,144 @@ body {
 .bg-green { background-color: #2ecc71; }   /* Classificação 1 */
 .bg-yellow { background-color: #f1c40f; }  /* Classificação 2 */
 .bg-red { background-color: #e74c3c; }     /* Classificação 3 */
+
+/* --- Estilos do Popup Personalizado --- */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  /* MUDANÇA: De 'hidden' para 'visible' para o tooltip poder "sair" da caixa */
+  overflow: visible; 
+  padding: 0;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  width: 260px !important; /* Força uma largura boa */
+}
+
+.popup-content {
+  padding: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+.popup-badge {
+  background: #eee;
+  color: #555;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.popup-content h3 {
+  margin: 8px 0 4px 0;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.type-text {
+  margin: 0;
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.popup-content hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 12px 0;
+}
+
+/* Seção de Saudabilidade */
+.saudabilidade-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.tooltip-container {
+  position: relative; /* Necessário para posicionar o texto flutuante */
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.tooltip-trigger {
+  background: #ccc;
+  color: white;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  cursor: help;
+  font-weight: bold;
+}
+
+/* O texto escondido */
+.tooltip-text {
+  visibility: hidden;
+  width: 180px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 1.4;
+  
+  /* Posicionamento: Em cima do ícone */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Faz aparecer acima do ? */
+  left: 50%;
+  margin-left: -90px; /* Centraliza (metade da largura) */
+  
+  /* Efeitinho de transição */
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* A setinha preta embaixo do tooltip */
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* Mostrar ao passar o mouse */
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background: #ecf0f1;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.score-number {
+  font-size: 11px;
+  font-weight: bold;
+  float: right;
+  color: #555;
+}
