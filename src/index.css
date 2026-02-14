@@ -58,6 +58,9 @@ body {
 }
 
 /* Classificação 3 */
+.bg-blue {
+  background-color: #3b82f6;
+}
 
 /* --- Estilos do Popup Personalizado --- */
 .leaflet-popup-content-wrapper {

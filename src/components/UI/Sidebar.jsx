@@ -121,9 +121,9 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
               <label>Classificação do Estabelecimento</label>
               <select value={filtroClassificacao} onChange={e => setFiltroClassificacao(e.target.value)}>
                 <option value="todas">Todas</option>
-                <option value="1">🟢 Tipo 1</option>
-                <option value="2">🟡 Tipo 2</option>
-                <option value="3">🔴 Tipo 3</option>
+                <option value="1">Tipo 1</option>
+                <option value="2">Tipo 2</option>
+                <option value="3">Tipo 3</option>
               </select>
             </div>
 
@@ -159,7 +159,7 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
                   <strong>{local.nome}</strong>
                   <div className="item-badges">
                     <small className="saude-badge">{local.indiceSaudabilidade}</small>
-                    <span className={`status-dot ${local.classificacao === 1 ? 'bg-green' : (local.classificacao === 2 ? 'bg-yellow' : 'bg-red')}`}></span>
+                    <span className="status-dot bg-blue"></span>
                   </div>
                 </div>
                 <small className="item-centro">{local.centro || 'Ilha do Fundão'}</small>

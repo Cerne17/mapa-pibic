@@ -45,9 +45,8 @@ const MapResizer = () => {
 };
 
 const createCustomIcon = (classificacao, isHighlighted) => {
-  let colorClass = 'bg-red';
-  if (classificacao === 1) colorClass = 'bg-green';
-  if (classificacao === 2) colorClass = 'bg-yellow';
+  // Ignoramos a classificação para cor padronizada azul no mapa
+  const colorClass = 'bg-blue';
 
   return L.divIcon({
     className: `custom-marker ${isHighlighted ? 'selected' : ''}`,
