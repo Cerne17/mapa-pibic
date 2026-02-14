@@ -10,7 +10,7 @@
   align-items: flex-end;
   /* Alinha tudo à direita */
   max-width: 90vw;
-  /* Garante que não extrapole a largura no mobile */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* Botão de abrir/fechar */
@@ -18,16 +18,21 @@
   background: #fff;
   border: 1px solid #ccc;
   padding: 5px 10px;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 12px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  margin-bottom: 5px;
-  /* Espaço entre botão e caixa */
+  font-size: 13px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 8px;
   font-weight: bold;
-  color: #555;
+  color: #1e293b;
   display: block;
-  /* Sempre visível */
+  border: 1px solid #f1f5f9;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.mobile-icon {
+  display: none;
 }
 
 .legend-toggle-btn:hover {
@@ -42,21 +47,19 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
   font-family: 'Inter', sans-serif;
   width: 320px;
-  /* Aumentado para o texto longo */
   max-width: 320px;
-  animation: fadeIn 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+.closed .legend-content {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.open .legend-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .legend-content h4 {
@@ -131,14 +134,79 @@
 /* --- RESPONSIVIDADE (MOBILE) --- */
 @media (max-width: 768px) {
   .legend-wrapper {
-    bottom: 24px;
-    /* Ajustado para nova mobile UI */
-    right: 20px;
+    bottom: calc(48px + env(safe-area-inset-bottom, 16px));
+    right: 0;
     z-index: 1500;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: visible;
+  }
+
+  .legend-wrapper.closed {
+    transform: translateX(100%);
   }
 
   .legend-content {
-    width: 280px;
-    padding: 12px;
+    width: 320px;
+    max-width: 85vw;
+    padding: 16px;
+    max-height: none;
+    overflow-y: visible;
+    border-radius: 12px 0 0 12px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .closed .legend-content {
+    pointer-events: none;
+  }
+
+  .legend-toggle-btn {
+    font-size: 13px;
+    padding: 10px 16px;
+    border-radius: 12px 0 0 12px;
+    margin-top: 0;
+    position: absolute;
+    left: -105px;
+    bottom: 0;
+    background: white;
+    border: 1px solid #f1f5f9;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+    z-index: 1501;
+  }
+
+  .desktop-icon {
+    display: none;
+  }
+
+  .mobile-icon {
+    display: block;
+  }
+
+  .legend-item {
+    margin-bottom: 8px;
+  }
+
+  .legend-item strong {
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+
+  .legend-item small {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+
+  .legend-divider {
+    margin: 8px 0;
+  }
+
+  .legend-info strong {
+    font-size: 12px;
+  }
+
+  .legend-info p {
+    font-size: 10px;
+    line-height: 1.3;
   }
 }
