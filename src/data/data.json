@@ -641,7 +641,7 @@
     },
     {
         "nome": "RU CT 1",
-        "id": 20410,
+        "id": 20999,
         "centro": "CT",
         "latitude": -22.8591288148338,
         "longitude": -43.23083057281768,
@@ -651,7 +651,7 @@
     },
     {
         "nome": "RU Letras",
-        "id": 20410,
+        "id": 21999,
         "centro": "Letras",
         "latitude": -22.85994215921727,
         "longitude": -43.22519567518762,
