@@ -1,23 +1,16 @@
 import React, { useState } from 'react';
 import MapComponent from './components/Map/MapComponent';
 import Sidebar from './components/UI/Sidebar';
-import Modal from './components/UI/Modal';
 import AboutModal from './components/UI/AboutModal';
 import './App.css';
 
 function App() {
   const [selectedLocal, setSelectedLocal] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
 
   const handleSelectLocation = (local) => {
     setSelectedLocal(local);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
   };
 
   const handleToggleSidebar = () => {
@@ -38,11 +31,6 @@ function App() {
           selectedLocal={selectedLocal}
           onSelectMarker={handleSelectLocation}
           isSidebarOpen={isSidebarOpen}
-        />
-        <Modal
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          local={selectedLocal}
         />
         <AboutModal
           isOpen={isAboutModalOpen}

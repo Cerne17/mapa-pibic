@@ -82,7 +82,10 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
 
       <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
-          <h2>Conhecendo o Ambiente Alimentar da UFRJ</h2>
+          <div className="main-title">
+            <h1>M.A.A.M. - Onde Comer</h1>
+            <p>Mapa do Ambiente Alimentar da Minerva</p>
+          </div>
 
           <input
             type="text"
@@ -105,7 +108,17 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
             </div>
 
             <div className="filter-group">
-              <label>Classificação</label>
+              <label>Modalidade de Serviço</label>
+              <select value={filtroTipo} onChange={e => setFiltroTipo(e.target.value)}>
+                <option value="todos">Todos</option>
+                {tiposUnicos.map(t => (
+                  <option key={t} value={t}>{t}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="filter-group">
+              <label>Classificação do Estabelecimento</label>
               <select value={filtroClassificacao} onChange={e => setFiltroClassificacao(e.target.value)}>
                 <option value="todas">Todas</option>
                 <option value="1">🟢 Tipo 1</option>
@@ -115,21 +128,11 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
             </div>
 
             <div className="filter-group">
-              <label>Tipo</label>
-              <select value={filtroTipo} onChange={e => setFiltroTipo(e.target.value)}>
-                <option value="todos">Todos</option>
-                {tiposUnicos.map(t => (
-                  <option key={t} value={t}>{t}</option>
-                ))}
-              </select>
-            </div>
-
-            <div className="filter-group full-width">
-              <label>Ordenar</label>
+              <label>Índice de Saudabilidade</label>
               <select value={ordenacao} onChange={e => setOrdenacao(e.target.value)}>
                 <option value="padrao">Padrão</option>
-                <option value="maior">Mais Saudáveis</option>
-                <option value="menor">Menos Saudáveis</option>
+                <option value="maior">Maior Saudabilidade</option>
+                <option value="menor">Menor Saudabilidade</option>
               </select>
             </div>
           </div>
@@ -166,13 +169,18 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
         </div>
 
         <div className="sidebar-footer compact">
-          <button className="btn-about" onClick={onOpenAbout}>
-            Sobre o Projeto
-          </button>
-          <div className="compact-logos">
-            <img src="https://ufrj.br/wp-content/uploads/2024/01/ufrj-horizontal-cor-rgb-telas.png" alt="UFRJ" />
-            <img src="https://injc.ufrj.br/wp-content/uploads/2014/10/INJC-2.jpg" alt="INJC" />
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRufVAnLgXIjj-mdnic_2tPbtXdjiyhRS8x7A&s" alt="Gastronomia" />
+          <div className="footer-top-row">
+            <button className="btn-about" onClick={onOpenAbout}>
+              Sobre o Projeto
+            </button>
+            <div className="compact-logos">
+              <img src="https://ufrj.br/wp-content/uploads/2024/01/ufrj-horizontal-cor-rgb-telas.png" alt="UFRJ" />
+              <img src="https://injc.ufrj.br/wp-content/uploads/2014/10/INJC-2.jpg" alt="INJC" />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRufVAnLgXIjj-mdnic_2tPbtXdjiyhRS8x7A&s" alt="Gastronomia" />
+            </div>
+          </div>
+          <div className="footer-date">
+            <small>Dados coletados em 2024</small>
           </div>
         </div>
       </div>

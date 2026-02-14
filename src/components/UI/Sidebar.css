@@ -65,13 +65,25 @@
   text-align: center;
 }
 
-.sidebar-header h2 {
-  margin: 0 0 24px 0;
-  font-size: 24px;
+.main-title {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.main-title h1 {
+  margin: 0;
+  font-size: 26px;
   color: #1e293b;
-  font-weight: 800;
-  letter-spacing: -0.8px;
-  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.main-title p {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
 }
 
 .search-input {
@@ -105,14 +117,8 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  flex: 1 1 140px;
-  /* Flexibiliza o tamanho */
-  max-width: calc(50% - 6px);
-  /* Garante 2 por linha com gap */
-}
-
-.filter-group.full-width {
-  flex: 1 1 100%;
+  flex: 1 1 calc(50% - 6px);
+  width: calc(50% - 6px);
 }
 
 .filter-group label {
@@ -120,6 +126,13 @@
   font-weight: 700;
   color: #94a3b8;
   text-transform: uppercase;
+  height: 28px;
+  /* Strict height for 2 lines */
+  display: flex;
+  align-items: flex-end;
+  line-height: 1.2;
+  text-align: left;
+  width: 100%;
 }
 
 .filter-group select {
@@ -226,10 +239,27 @@
   background: white;
   border-top: 1px solid #f1f5f9;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  /* Stacked by default to handle date */
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
+}
+
+.footer-top-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-date {
+  width: 100%;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 500;
+  margin-top: -4px;
 }
 
 .btn-about {
