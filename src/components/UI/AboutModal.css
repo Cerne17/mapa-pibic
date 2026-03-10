@@ -1,9 +1,7 @@
 .about-modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
+    /* Substitui top/left/width/height para ser mais robusto com scrollbars */
     background: rgba(15, 23, 42, 0.4);
     backdrop-filter: blur(8px);
     display: flex;
@@ -97,6 +95,29 @@
     margin-bottom: 32px;
 }
 
+.project-info {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.project-info strong {
+    font-size: 14px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.project-info p {
+    margin: 4px 0;
+    font-size: 15px;
+    color: #1e293b;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
 .team-member {
     display: flex;
     flex-direction: column;
@@ -104,37 +125,24 @@
 }
 
 .team-member strong {
-    font-size: 16px;
-    color: #1e293b;
-}
-
-.team-member small {
-    font-size: 13px;
+    font-size: 14px;
     color: #64748b;
-    line-height: 1.5;
 }
 
-.coordinator {
+.team-member p {
+    margin: 0;
+    font-size: 15px;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.coordination {
     padding-bottom: 20px;
     border-bottom: 1px dashed #e2e8f0;
 }
 
-.team-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-}
-
-.email-link {
-    font-size: 13px;
-    color: #3b82f6;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 4px;
-}
-
-.email-link:hover {
-    text-decoration: underline;
+.credits-list {
+    margin-top: 10px;
 }
 
 .about-action {
@@ -198,12 +206,45 @@
 }
 
 @media (max-width: 600px) {
+    .about-modal-overlay {
+        padding: 0;
+        background: white;
+        /* No overlay on mobile, modal is the screen */
+    }
+
     .about-modal-content {
-        padding: 30px 20px;
+        width: 100vw;
+        height: 100dvh;
+        max-width: none;
+        border-radius: 0;
+        padding: 60px 24px 40px;
+        display: flex;
+        flex-direction: column;
+        animation: none;
+        /* Remove animation for better mobile snap */
+        box-shadow: none;
+        overflow-y: auto;
+    }
+
+    .about-modal-header h2 {
+        font-size: 24px;
+    }
+
+    .about-modal-close {
+        top: 16px;
+        right: 16px;
     }
 
     .team-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+    }
+
+    .about-modal-footer {
+        margin-top: auto;
+        /* Push footer to bottom */
+        padding-top: 20px;
+        padding-bottom: calc(40px + env(safe-area-inset-bottom, 20px));
+        /* Margem de segurança extra */
     }
 }

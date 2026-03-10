@@ -24,22 +24,29 @@ const AboutModal = ({ isOpen, onClose }) => {
 
                 <div className="about-modal-body">
                     <div className="credits-section">
-                        <div className="team-member coordinator">
-                            <strong>Letícia Ferreira Tavares</strong>
-                            <small>Coordenadora do projeto de pesquisa. Docente do curso de graduação em Gastronomia, Instituto de Nutrição Josué de Castro/UFRJ</small>
-                            <a href="mailto:leticiatavares@nutricao.ufrj.br" className="email-link">leticiatavares@nutricao.ufrj.br</a>
+                        <div className="project-info">
+                            <strong>Desenvolvido por:</strong>
+                            <p>Grupo de pesquisa: Diálogos entre ambiente alimentar, gastronomia e saúde.</p>
+                            <p>Projeto: Avaliação do Ambiente Alimentar da Cidade Universitária - UFRJ</p>
                         </div>
 
-                        <div className="team-grid">
+                        <div className="team-member coordination">
+                            <strong>Coordenação:</strong>
+                            <p>Letícia Tavares e Maria Eliza Passos (Instituto de Nutrição Josué de Castro - Curso de Graduação em Gastronomia)</p>
+                        </div>
+
+                        <div className="team-grid credits-list">
                             <div className="team-member">
-                                <strong>Maria Eliza Assis dos Passos</strong>
-                                <small>Docente do curso de graduação em Gastronomia, Instituto de Nutrição Josué de Castro/UFRJ</small>
-                                <a href="mailto:elizapassos@nutricao.ufrj.br" className="email-link">elizapassos@nutricao.ufrj.br</a>
+                                <strong>Bolsista PIBIC CNPq:</strong>
+                                <p>Gabriella Santiago</p>
                             </div>
                             <div className="team-member">
-                                <strong>Paulo Cesar de Castro Junior</strong>
-                                <small>Docente do curso de graduação em Gastronomia, Instituto de Nutrição Josué de Castro/UFRJ</small>
-                                <a href="mailto:paulocastro@nutricao.ufrj.br" className="email-link">paulocastro@nutricao.ufrj.br</a>
+                                <strong>Bolsista PIBIC UFRJ:</strong>
+                                <p>Cecília Mattos</p>
+                            </div>
+                            <div className="team-member">
+                                <strong>Voluntário:</strong>
+                                <p>Miguel Cerne</p>
                             </div>
                         </div>
                     </div>
