@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import locaisData from '../../data/data.json';
+import logo from '../../assets/logo.png';
 import './Sidebar.css';
 
 const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
@@ -83,7 +84,10 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
       <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
           <div className="main-title">
-            <h1>M.A.A.M. - Onde Comer</h1>
+            <div className="title-with-logo">
+              <img src={logo} alt="M.A.A.M. Logo" className="sidebar-logo" />
+              <h1>M.A.A.M. - Onde Comer</h1>
+            </div>
             <p>Mapa do Ambiente Alimentar da Minerva</p>
           </div>
 
