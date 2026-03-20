@@ -93,6 +93,7 @@
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   background: #f8fafc;
   box-sizing: border-box;
+  margin-top: 24px;
 }
 
 .search-input:focus {
