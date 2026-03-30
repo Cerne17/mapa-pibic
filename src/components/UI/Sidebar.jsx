@@ -9,6 +9,7 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
   const [filtroCentro, setFiltroCentro] = useState('todos');
   const [filtroClassificacao, setFiltroClassificacao] = useState('todas');
   const [filtroTipo, setFiltroTipo] = useState('todos');
+  const [showFilters, setShowFilters] = useState(false);
 
   const centrosUnicos = useMemo(() => {
     const centros = locaisData
@@ -83,12 +84,12 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
 
       <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
-          <div className="main-title">
-            <div className="title-with-logo">
-              <img src={logo} alt="M.A.A.M. Logo" className="sidebar-logo" />
+          <div className="sidebar-header-branding">
+            <img src={logo} alt="M.A.A.M. Logo" className="sidebar-logo" />
+            <div className="main-title">
               <h1>M.A.A.M. - Onde Comer</h1>
+              <p>Mapa do Ambiente Alimentar da Minerva</p>
             </div>
-            <p>Mapa do Ambiente Alimentar da Minerva</p>
           </div>
 
           <input
@@ -99,45 +100,55 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
             className="search-input"
           />
 
-          <div className="filters-container">
-            <div className="filter-group">
-              <label>Centro</label>
-              <select value={filtroCentro} onChange={e => setFiltroCentro(e.target.value)}>
-                <option value="todos">Todos</option>
-                {centrosUnicos.map(c => (
-                  <option key={c} value={c}>{c}</option>
-                ))}
-                <option value="outros">Outros</option>
-              </select>
-            </div>
+          <button 
+            className="toggle-filters-btn" 
+            onClick={() => setShowFilters(!showFilters)}
+          >
+            Filtros e Ordenação
+            <span className={`arrow-icon ${showFilters ? 'open' : ''}`}>▼</span>
+          </button>
 
-            <div className="filter-group">
-              <label>Modalidade de Serviço</label>
-              <select value={filtroTipo} onChange={e => setFiltroTipo(e.target.value)}>
-                <option value="todos">Todos</option>
-                {tiposUnicos.map(t => (
-                  <option key={t} value={t}>{t}</option>
-                ))}
-              </select>
-            </div>
+          <div className={`filters-wrapper ${showFilters ? 'open' : ''}`}>
+            <div className="filters-container">
+              <div className="filter-group">
+                <label>Centro</label>
+                <select value={filtroCentro} onChange={e => setFiltroCentro(e.target.value)}>
+                  <option value="todos">Todos</option>
+                  {centrosUnicos.map(c => (
+                    <option key={c} value={c}>{c}</option>
+                  ))}
+                  <option value="outros">Outros</option>
+                </select>
+              </div>
 
-            <div className="filter-group">
-              <label>Classificação do Estabelecimento</label>
-              <select value={filtroClassificacao} onChange={e => setFiltroClassificacao(e.target.value)}>
-                <option value="todas">Todas</option>
-                <option value="1">Tipo 1</option>
-                <option value="2">Tipo 2</option>
-                <option value="3">Tipo 3</option>
-              </select>
-            </div>
+              <div className="filter-group">
+                <label>Modalidade de Serviço</label>
+                <select value={filtroTipo} onChange={e => setFiltroTipo(e.target.value)}>
+                  <option value="todos">Todos</option>
+                  {tiposUnicos.map(t => (
+                    <option key={t} value={t}>{t}</option>
+                  ))}
+                </select>
+              </div>
 
-            <div className="filter-group">
-              <label>Índice de Saudabilidade</label>
-              <select value={ordenacao} onChange={e => setOrdenacao(e.target.value)}>
-                <option value="padrao">Padrão</option>
-                <option value="maior">Maior Saudabilidade</option>
-                <option value="menor">Menor Saudabilidade</option>
-              </select>
+              <div className="filter-group">
+                <label>Classificação</label>
+                <select value={filtroClassificacao} onChange={e => setFiltroClassificacao(e.target.value)}>
+                  <option value="todas">Todas</option>
+                  <option value="1">Tipo 1</option>
+                  <option value="2">Tipo 2</option>
+                  <option value="3">Tipo 3</option>
+                </select>
+              </div>
+
+              <div className="filter-group">
+                <label>Saudabilidade</label>
+                <select value={ordenacao} onChange={e => setOrdenacao(e.target.value)}>
+                  <option value="padrao">Padrão</option>
+                  <option value="maior">Maior</option>
+                  <option value="menor">Menor</option>
+                </select>
+              </div>
             </div>
           </div>
 

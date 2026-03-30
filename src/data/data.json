@@ -370,7 +370,7 @@
         "indiceSaudabilidade": 56
     },
     {
-        "nome": "RU CT 2",
+        "nome": "Restaurante Universitário CT 2",
         "id": 20410,
         "centro": "CT",
         "latitude": -22.86127,
@@ -630,7 +630,7 @@
         "indiceSaudabilidade": 28
     },
     {
-        "nome": "RU Central",
+        "nome": "Restaurante Universitário Central",
         "id": 10,
         "centro": null,
         "latitude": -22.84439,
@@ -640,7 +640,7 @@
         "indiceSaudabilidade": 89
     },
     {
-        "nome": "RU CT 1",
+        "nome": "Restaurante Universitário CT 1",
         "id": 20999,
         "centro": "CT",
         "latitude": -22.8591288148338,
@@ -650,7 +650,7 @@
         "indiceSaudabilidade": 89
     },
     {
-        "nome": "RU Letras",
+        "nome": "Restaurante Universitário Letras",
         "id": 21999,
         "centro": "Letras",
         "latitude": -22.85994215921727,
