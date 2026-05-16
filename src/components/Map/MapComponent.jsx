@@ -140,6 +140,7 @@ const MapComponent = ({ selectedLocal, onSelectMarker }) => {
                     <div className="detailed-card-content">
                       <button className="close-card" onClick={(e) => {
                         e.stopPropagation();
+                        e.nativeEvent.stopImmediatePropagation();
                         onSelectMarker(null);
                       }}>&times;</button>
                       <h3>{local.nome}</h3>
