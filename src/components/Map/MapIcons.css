@@ -251,3 +251,19 @@
         z-index: 1200;
     }
 }
+
+/* Cluster icon overrides */
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+    background-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+    background-color: rgba(59, 130, 246, 0.75) !important;
+    color: white !important;
+    font-weight: 700;
+    font-size: 13px;
+}
