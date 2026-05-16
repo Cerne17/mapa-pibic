@@ -1,11 +1,8 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, useMap, Tooltip } from 'react-leaflet';
-import MarkerClusterGroup from 'react-leaflet-cluster';
 import L from 'leaflet';
 import locaisData from '../../data/data.json';
 import Legend from '../UI/Legend';
-import 'react-leaflet-cluster/dist/assets/MarkerCluster.css';
-import 'react-leaflet-cluster/dist/assets/MarkerCluster.Default.css';
 import './MapIcons.css';
 
 const POSITION_FUNDAO = [-22.8528, -43.2288];
@@ -20,24 +17,16 @@ const CLASSIFICACAO_DESCRIPTIONS = {
   3: "Predomínio de venda de alimentos não saudáveis (ultraprocessados e preparações culinárias baseadas nestes alimentos)."
 };
 
-const ClusterController = ({ selectedLocal, clusterGroupRef, markerRefsRef }) => {
+const MapController = ({ selectedLocal }) => {
   const map = useMap();
 
   useEffect(() => {
-    if (!selectedLocal) return;
-
-    const latlng = [selectedLocal.latitude, selectedLocal.longitude];
-    const clusterGroup = clusterGroupRef.current;
-    const markerInstance = markerRefsRef.current[selectedLocal.id];
-
-    if (clusterGroup && markerInstance) {
-      clusterGroup.zoomToShowLayer(markerInstance, () => {
-        map.flyTo(latlng, 17, { duration: 1.5 });
+    if (selectedLocal) {
+      map.flyTo([selectedLocal.latitude, selectedLocal.longitude], 17, {
+        duration: 1.5
       });
-    } else {
-      map.flyTo(latlng, 17, { duration: 1.5 });
     }
-  }, [selectedLocal, map, clusterGroupRef, markerRefsRef]);
+  }, [selectedLocal, map]);
 
   return null;
 };
@@ -76,8 +65,6 @@ const ICON_CACHE = Object.fromEntries(
 
 const MapComponent = ({ selectedLocal, onSelectMarker }) => {
   const [hoveredLocal, setHoveredLocal] = useState(null);
-  const clusterGroupRef = useRef(null);
-  const markerRefsRef = useRef({});
 
   const uniqueLocais = useMemo(() => {
     const seen = new Set();
@@ -104,14 +91,9 @@ const MapComponent = ({ selectedLocal, onSelectMarker }) => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <ClusterController
-          selectedLocal={selectedLocal}
-          clusterGroupRef={clusterGroupRef}
-          markerRefsRef={markerRefsRef}
-        />
+        <MapController selectedLocal={selectedLocal} />
         <MapResizer />
 
-        <MarkerClusterGroup ref={clusterGroupRef} chunkedLoading>
         {uniqueLocais.map((local) => {
             const isSelected = selectedLocal?.id === local.id;
             const isHovered = hoveredLocal?.id === local.id;
@@ -122,7 +104,6 @@ const MapComponent = ({ selectedLocal, onSelectMarker }) => {
                 key={local.id}
                 position={[local.latitude, local.longitude]}
                 icon={ICON_CACHE[`${local.classificacao}-${isHighlighted}`]}
-                ref={(instance) => { if (instance) markerRefsRef.current[local.id] = instance; }}
                 eventHandlers={{
                   click: () => onSelectMarker(local),
                   mouseover: () => setHoveredLocal(local),
@@ -182,7 +163,6 @@ const MapComponent = ({ selectedLocal, onSelectMarker }) => {
               </Marker>
           );
         })}
-        </MarkerClusterGroup>
       </MapContainer>
 
       <Legend />
