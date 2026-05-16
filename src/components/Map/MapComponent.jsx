@@ -78,7 +78,7 @@ const MapComponent = ({ selectedLocal, onSelectMarker }) => {
   }, []);
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
+    <div style={{ position: 'relative', width: '100%', height: '100dvh' }}>
 
       <MapContainer
         center={POSITION_FUNDAO}
