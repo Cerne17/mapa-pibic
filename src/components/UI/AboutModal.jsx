@@ -3,12 +3,13 @@ import './AboutModal.css';
 
 const AboutModal = ({ isOpen, onClose }) => {
     useEffect(() => {
+        if (!isOpen) return;
         const handleEsc = (e) => {
             if (e.key === 'Escape') onClose();
         };
         window.addEventListener('keydown', handleEsc);
         return () => window.removeEventListener('keydown', handleEsc);
-    }, [onClose]);
+    }, [isOpen, onClose]);
 
     if (!isOpen) return null;
 
@@ -65,7 +66,7 @@ const AboutModal = ({ isOpen, onClose }) => {
                             <img src="https://injc.ufrj.br/wp-content/uploads/2014/10/INJC-2.jpg" alt="Logo INJC" />
                         </a>
                         <a href="https://www.gastronomia.ufrj.br/" target="_blank" rel="noopener noreferrer">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRufVAnLgXIjj-mdnic_2tPbtXdjiyhRS8x7A&s" />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRufVAnLgXIjj-mdnic_2tPbtXdjiyhRS8x7A&s" alt="Logo Gastronomia UFRJ" />
                         </a>
                     </div>
                 </div>
