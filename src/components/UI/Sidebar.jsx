@@ -181,7 +181,7 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
                   <strong>{local.nome}</strong>
                   <div className="item-badges">
                     <small className="saude-badge">{local.indiceSaudabilidade}</small>
-                    <span className="status-dot bg-blue"></span>
+                    <span className={`status-dot ${local.classificacao === 1 ? 'bg-green' : local.classificacao === 2 ? 'bg-yellow' : 'bg-red'}`}></span>
                   </div>
                 </div>
                 <small className="item-centro">{local.centro || 'Ilha do Fundão'}</small>
