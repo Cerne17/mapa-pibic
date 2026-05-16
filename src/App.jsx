@@ -30,7 +30,6 @@ function App() {
         <MapComponent
           selectedLocal={selectedLocal}
           onSelectMarker={handleSelectLocation}
-          isSidebarOpen={isSidebarOpen}
         />
         <AboutModal
           isOpen={isAboutModalOpen}

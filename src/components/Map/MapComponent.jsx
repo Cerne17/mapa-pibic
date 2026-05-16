@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, useMap, Tooltip } from 'react-leaflet';
 // import MarkerClusterGroup from 'react-leaflet-cluster'; // Per user request to disable clustering
 import L from 'leaflet';
@@ -45,28 +45,28 @@ const MapResizer = () => {
   return null;
 };
 
+const colorMap = { 1: 'marker-green', 2: 'marker-yellow', 3: 'marker-red' };
+
 const createCustomIcon = (classificacao, isHighlighted) => {
-  // Mapping classificacao to classes (definidas no MapIcons.css ou index.css)
-  const colorMap = {
-    1: 'marker-green',
-    2: 'marker-yellow',
-    3: 'marker-red'
-  };
-
   const colorClass = colorMap[classificacao] || 'marker-blue';
-
   return L.divIcon({
     className: `custom-marker-symbol ${isHighlighted ? 'selected' : ''} ${colorClass}`,
     html: `<span class="material-symbols-outlined">location_on</span>`,
     iconSize: [isHighlighted ? 40 : 32, isHighlighted ? 40 : 32],
-    iconAnchor: [isHighlighted ? 20 : 16, isHighlighted ? 40 : 32], // Tip of the pin
+    iconAnchor: [isHighlighted ? 20 : 16, isHighlighted ? 40 : 32],
     popupAnchor: [0, -32]
   });
 };
 
-const MapComponent = ({ selectedLocal, onSelectMarker, isSidebarOpen }) => {
+// Pre-compute all 6 icon variants (3 classifications × 2 highlight states)
+const ICON_CACHE = Object.fromEntries(
+  [1, 2, 3].flatMap(cls =>
+    [false, true].map(highlighted => [`${cls}-${highlighted}`, createCustomIcon(cls, highlighted)])
+  )
+);
+
+const MapComponent = ({ selectedLocal, onSelectMarker }) => {
   const [hoveredLocal, setHoveredLocal] = React.useState(null);
-  const markerRefs = useRef({});
 
   const uniqueLocais = useMemo(() => {
     const seen = new Set();
@@ -76,13 +76,6 @@ const MapComponent = ({ selectedLocal, onSelectMarker, isSidebarOpen }) => {
       return true;
     });
   }, []);
-
-  // The useEffect to open popups is no longer needed as popups are removed.
-  // useEffect(() => {
-  //   if (selectedLocal && markerRefs.current[selectedLocal.id]) {
-  //     markerRefs.current[selectedLocal.id].openPopup();
-  //   }
-  // }, [selectedLocal]);
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
@@ -113,8 +106,7 @@ const MapComponent = ({ selectedLocal, onSelectMarker, isSidebarOpen }) => {
               <Marker
                 key={local.id}
                 position={[local.latitude, local.longitude]}
-                icon={createCustomIcon(local.classificacao, isHighlighted)}
-                ref={(ref) => markerRefs.current[local.id] = ref}
+                icon={ICON_CACHE[`${local.classificacao}-${isHighlighted}`]}
                 eventHandlers={{
                   click: () => onSelectMarker(local),
                   mouseover: () => setHoveredLocal(local),
