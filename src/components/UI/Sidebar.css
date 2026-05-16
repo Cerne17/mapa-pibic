@@ -276,10 +276,22 @@
   flex-shrink: 0;
 }
 
-.status-dot.bg-green { background-color: #2ecc71; }
-.status-dot.bg-yellow { background-color: #f1c40f; }
-.status-dot.bg-red { background-color: #e74c3c; }
-.status-dot.bg-blue { background-color: #3b82f6; }
+.status-dot.bg-green {
+  background-color: #2ecc71;
+}
+
+
+.status-dot.bg-yellow {
+  background-color: #f1c40f;
+}
+
+.status-dot.bg-red {
+  background-color: #e74c3c;
+}
+
+.status-dot.bg-blue {
+  background-color: #3b82f6;
+}
 
 .item-centro {
   color: #64748b;

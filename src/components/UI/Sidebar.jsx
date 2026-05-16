@@ -11,25 +11,32 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
   const [filtroTipo, setFiltroTipo] = useState('todos');
   const [showFilters, setShowFilters] = useState(false);
 
+  const uniqueLocais = useMemo(() => {
+    const seen = new Set();
+    return locaisData.filter(local => {
+      if (seen.has(local.id)) return false;
+      seen.add(local.id);
+      return true;
+    });
+  }, []);
+
   const centrosUnicos = useMemo(() => {
-    const centros = locaisData
+    const centros = uniqueLocais
       .map(l => l.centro)
       .filter(c => c && c.trim() !== '');
     return [...new Set(centros)].sort();
-  }, []);
+  }, [uniqueLocais]);
 
-  // Extrair tipos únicos
   const tiposUnicos = useMemo(() => {
-    const tipos = locaisData
+    const tipos = uniqueLocais
       .map(l => l.tipo)
       .filter(t => t && t.trim() !== '');
     return [...new Set(tipos)].sort();
-  }, []);
+  }, [uniqueLocais]);
 
-  // Lógica de Processamento Unificada
   const listaFinal = useMemo(() => {
     // 1. Filtragem
-    const filtrados = locaisData.filter(local => {
+    const filtrados = uniqueLocais.filter(local => {
       // Filtro de Texto (Nome ou Centro)
       const textoBusca = busca.toLowerCase();
       const matchTexto = local.nome.toLowerCase().includes(textoBusca) ||
@@ -70,7 +77,7 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
     });
 
     return ordenados;
-  }, [busca, filtroCentro, filtroClassificacao, filtroTipo, ordenacao]);
+  }, [uniqueLocais, busca, filtroCentro, filtroClassificacao, filtroTipo, ordenacao]);
 
   return (
     <>
@@ -161,9 +168,9 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
           {listaFinal.length === 0 ? (
             <p className="no-results">Nenhum local encontrado.</p>
           ) : (
-            listaFinal.map((local, index) => (
+            listaFinal.map((local) => (
               <div
-                key={`${local.id}-${index}`}
+                key={local.id}
                 className="list-item"
                 onClick={() => {
                   onSelectLocation(local);
