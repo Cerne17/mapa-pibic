@@ -109,7 +109,7 @@ const Sidebar = ({ onSelectLocation, isOpen, onToggle, onOpenAbout }) => {
 
           <button 
             className="toggle-filters-btn" 
-            onClick={() => setShowFilters(!showFilters)}
+            onClick={() => setShowFilters(prev => !prev)}
           >
             Filtros e Ordenação
             <span className={`arrow-icon ${showFilters ? 'open' : ''}`}>▼</span>

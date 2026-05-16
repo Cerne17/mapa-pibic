@@ -1,15 +1,14 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, useMap, Tooltip } from 'react-leaflet';
-// import MarkerClusterGroup from 'react-leaflet-cluster'; // Per user request to disable clustering
 import L from 'leaflet';
 import locaisData from '../../data/data.json';
 import Legend from '../UI/Legend';
 import './MapIcons.css';
 
-const POSITION_FUNDAO = [-22.8528, -43.2288]; // Centered view
+const POSITION_FUNDAO = [-22.8528, -43.2288];
 const BOUNDS_FUNDAO = [
-  [-22.8824, -43.2706], // Expanded SW
-  [-22.8232, -43.1870]  // Expanded NE
+  [-22.8824, -43.2706],
+  [-22.8232, -43.1870]
 ];
 
 const CLASSIFICACAO_DESCRIPTIONS = {
@@ -58,7 +57,6 @@ const createCustomIcon = (classificacao, isHighlighted) => {
   });
 };
 
-// Pre-compute all 6 icon variants (3 classifications × 2 highlight states)
 const ICON_CACHE = Object.fromEntries(
   [1, 2, 3].flatMap(cls =>
     [false, true].map(highlighted => [`${cls}-${highlighted}`, createCustomIcon(cls, highlighted)])
@@ -66,7 +64,7 @@ const ICON_CACHE = Object.fromEntries(
 );
 
 const MapComponent = ({ selectedLocal, onSelectMarker }) => {
-  const [hoveredLocal, setHoveredLocal] = React.useState(null);
+  const [hoveredLocal, setHoveredLocal] = useState(null);
 
   const uniqueLocais = useMemo(() => {
     const seen = new Set();
@@ -96,7 +94,6 @@ const MapComponent = ({ selectedLocal, onSelectMarker }) => {
         <MapController selectedLocal={selectedLocal} />
         <MapResizer />
 
-        {/* MarkerClusterGroup removed per user request for production reliability */}
         {uniqueLocais.map((local) => {
             const isSelected = selectedLocal?.id === local.id;
             const isHovered = hoveredLocal?.id === local.id;

@@ -2,17 +2,14 @@ import React, { useState } from 'react';
 import './Legend.css';
 
 const Legend = () => {
-  // Estado para controlar se está aberto ou fechado
-  // No Desktop começa aberto (true), mas vamos deixar o CSS controlar o visual inicial
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleLegend = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(prev => !prev);
   };
 
   return (
     <div className={`legend-wrapper ${isOpen ? 'open' : 'closed'}`}>
-      {/* Conteúdo da Legenda - No mobile, o controle de visibilidade será via CSS/Transform */}
       <div className="legend-content">
         <h4>Classificação</h4>
         <div className="legend-item">

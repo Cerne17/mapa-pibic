@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import MapComponent from './components/Map/MapComponent';
 import Sidebar from './components/UI/Sidebar';
 import AboutModal from './components/UI/AboutModal';
@@ -9,31 +9,34 @@ function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
 
-  const handleSelectLocation = (local) => {
+  const handleSelectLocation = useCallback((local) => {
     setSelectedLocal(local);
-  };
+  }, []);
 
-  const handleToggleSidebar = () => {
+  const handleToggleSidebar = useCallback(() => {
     setIsSidebarOpen(prev => !prev);
-  }
+  }, []);
+
+  const handleOpenAbout = useCallback(() => setIsAboutModalOpen(true), []);
+  const handleCloseAbout = useCallback(() => setIsAboutModalOpen(false), []);
 
   return (
-    <div className="app-container" style={{ display: 'flex', width: '100vw', height: '100vh', overflow: 'hidden' }}>
+    <div className="app-container">
       <Sidebar
         onSelectLocation={handleSelectLocation}
         isOpen={isSidebarOpen}
         onToggle={handleToggleSidebar}
-        onOpenAbout={() => setIsAboutModalOpen(true)}
+        onOpenAbout={handleOpenAbout}
       />
 
-      <div style={{ flex: 1, position: 'relative' }}>
+      <div className="map-wrapper">
         <MapComponent
           selectedLocal={selectedLocal}
           onSelectMarker={handleSelectLocation}
         />
         <AboutModal
           isOpen={isAboutModalOpen}
-          onClose={() => setIsAboutModalOpen(false)}
+          onClose={handleCloseAbout}
         />
       </div>
     </div>
