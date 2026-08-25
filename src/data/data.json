@@ -20,26 +20,6 @@
         "indiceSaudabilidade": 33
     },
     {
-        "nome": "Hora do lanche",
-        "id": 20704,
-        "centro": "CCMN",
-        "latitude": -22.85848,
-        "longitude": -43.23156,
-        "tipo": "Lanchonete",
-        "classificacao": 3,
-        "indiceSaudabilidade": 33
-    },
-    {
-        "nome": "Amarelinho",
-        "id": 20705,
-        "centro": "CCMN",
-        "latitude": -22.8585,
-        "longitude": -43.23198,
-        "tipo": "Lanchonete",
-        "classificacao": 3,
-        "indiceSaudabilidade": 22
-    },
-    {
         "nome": "Amarelinho",
         "id": 20705,
         "centro": "CCMN",
@@ -78,16 +58,6 @@
         "tipo": "Restaurante a quilo",
         "classificacao": 1,
         "indiceSaudabilidade": 61
-    },
-    {
-        "nome": "Nova Verona Mix",
-        "id": 20302,
-        "centro": "CCS",
-        "latitude": -22.84243,
-        "longitude": -43.23495,
-        "tipo": "Restaurante a quilo",
-        "classificacao": 1,
-        "indiceSaudabilidade": 56
     },
     {
         "nome": "Churrascaria Fundão grill",
@@ -201,7 +171,7 @@
     },
     {
         "nome": "Jovem Lanches",
-        "id": 20336,
+        "id": 20337,
         "centro": "CCS",
         "latitude": -22.84133,
         "longitude": -43.237839,
@@ -295,16 +265,6 @@
         "centro": "CCS",
         "latitude": -22.84154,
         "longitude": -43.23846,
-        "tipo": "Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
-        "classificacao": 2,
-        "indiceSaudabilidade": 50
-    },
-    {
-        "nome": "Big Neth",
-        "id": 20311,
-        "centro": "CCS",
-        "latitude": -22.84242,
-        "longitude": -43.23489,
         "tipo": "Estabelecimento Misto (lanchonete ou cafeteria e restaurante a quilo ou restaurante à la carte\/prato feito\/executivo)",
         "classificacao": 2,
         "indiceSaudabilidade": 50
