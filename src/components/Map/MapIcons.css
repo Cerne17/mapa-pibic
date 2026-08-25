@@ -24,6 +24,8 @@
     justify-content: center;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Escala a partir da ponta do pin, para que iconAnchor continue exato */
+    transform-origin: bottom center;
 }
 
 .custom-marker-symbol .material-symbols-outlined {
@@ -37,9 +39,31 @@
 }
 
 .custom-marker-symbol.selected {
-    z-index: 1000 !important;
-    transform: scale(1.2) translateY(-4px);
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transform: scale(1.5);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
+}
+
+.custom-marker-symbol.selected::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    bottom: 4px;
+    background: rgba(59, 130, 246, 0.5);
+    animation: markerPulse 1.5s infinite ease-out;
+    z-index: -1;
+}
+
+@keyframes markerPulse {
+    0% {
+        transform: scale(0.6);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(3.2);
+        opacity: 0;
+    }
 }
 
 .custom-marker-symbol.marker-green .material-symbols-outlined {
@@ -58,7 +82,12 @@
 }
 
 .custom-marker-symbol.selected .material-symbols-outlined {
-    font-variation-settings: 'FILL' 1, 'wght' 600;
+    /* Deve casar com iconSize/iconAnchor do estado destacado (44px) */
+    font-size: 44px;
+    width: 44px;
+    height: 44px;
+    font-variation-settings: 'FILL' 1, 'wght' 700;
+    filter: drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 4px #000000);
 }
 
 /* Hover Card Content (relative to marker) */
