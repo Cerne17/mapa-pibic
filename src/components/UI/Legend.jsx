@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
 import './Legend.css';
 
-const Legend = () => {
+const Legend = ({ selectedLocal }) => {
   const [isOpen, setIsOpen] = useState(true);
+  const [prevSelectedLocal, setPrevSelectedLocal] = useState(selectedLocal);
+
+  // Auto-collapse legend when a new location is selected
+  if (selectedLocal !== prevSelectedLocal) {
+    setPrevSelectedLocal(selectedLocal);
+    if (selectedLocal) {
+      setIsOpen(false);
+    }
+  }
 
   const toggleLegend = () => {
     setIsOpen(prev => !prev);

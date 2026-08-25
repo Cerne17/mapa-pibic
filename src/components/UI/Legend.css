@@ -172,32 +172,42 @@
 
   .legend-toggle-btn {
     font-size: 13px;
-    padding: 12px 18px;
-    border-radius: 16px 0 0 16px;
+    font-weight: 700;
+    padding: 12px 16px;
+    border-radius: 20px 0 0 20px;
     margin-top: 0;
     position: absolute;
     /* Posição padrão (fechado) */
-    left: -115px;
-    bottom: 20px;
-    min-width: 110px;
-    background: white;
-    border: 1px solid #f1f5f9;
-    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+    left: -125px;
+    bottom: 24px;
+    min-width: 120px;
+    background: #0f172a;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: -4px 6px 20px rgba(0, 0, 0, 0.3);
     z-index: 1501;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .legend-toggle-btn:active {
+    transform: scale(0.96);
   }
 
   /* Quando aberta, encolhemos o botão e aproximamos da caixa para caber na tela */
   .open .legend-toggle-btn {
-    left: -42px;
-    min-width: 40px;
-    width: 40px;
-    padding: 12px 10px;
-    /* Botão centralizado verticalmente na abertura? 
-       O usuário disse que não está posicionado corretamente. 
-       Vamos manter bottom: 20px mas talvez subir um pouco se estiver aberto. 
-    */
-    bottom: 40px;
+    left: -44px;
+    min-width: 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 22px 0 0 22px;
+    bottom: 30px;
+    background: #0f172a;
+    color: #ffffff;
+    box-shadow: -4px 6px 16px rgba(0, 0, 0, 0.25);
   }
 
   .desktop-icon {
